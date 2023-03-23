@@ -47,4 +47,10 @@ public class AddressController {
 	public Address updateAddress(@RequestBody Address address) {
 		return addressService.addAddress(address);
 	}
+	
+	@CrossOrigin(maxAge = 3600)
+	@RequestMapping(method = RequestMethod.POST, value = "/addresses")
+	public List<Address> addAddresses(@RequestBody List<Address> addresses) {
+		return addressService.addAddresses(addresses);
+	}
 }
