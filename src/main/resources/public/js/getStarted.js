@@ -162,7 +162,7 @@ document.body.addEventListener("click", function (e) {
       e.target.classList.remove("blue-background-light-2");
       e.target.innerHTML =
         "<span class='fa fa-spinner fa-spin w3-large'></span>";
-      signIn(email2.value, password2.value, e.target);
+      signIn(email2.value.toLowerCase(), password2.value, e.target);
     }
   } else if (targetId == "back-to-sign-in") {
     document.location.replace(`get-started.html?email=${email.value}`);
@@ -241,7 +241,7 @@ function signUp() {
 
   let payLoad = {
     fullName: fullName.value,
-    email: email.value,
+    email: email.value.toLowerCase(),
     password: password.value,
     referral: referralValue,
     date: moment(),
